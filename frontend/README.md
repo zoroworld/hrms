@@ -1,18 +1,67 @@
-# React + Vite
+# HRMS (Human Resource Management System)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
+HRMS is a **full-stack web application** built with **Django REST Framework** for the backend and **React (Vite + Bootstrap)** for the frontend.  
+It allows organizations to manage **employees, departments, and attendance** efficiently.  
 
-## React Compiler
+**Key features**:
+- Employee CRUD (Create, Read, Update, Delete)  
+- Attendance management with daily status  
+- View attendance records per employee  
+- RESTful APIs for frontend integration  
+- Bootstrap-based dashboard for easy access  
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+## Tech Stack
 
-## Expanding the ESLint configuration
+| Layer | Technology |
+|-------|------------|
+| Backend | Python, Django, Django REST Framework |
+| Database | PostgreSQL |
+| Frontend | React, Vite, Bootstrap 5 |
+| API Testing | Postman / Insomnia |
+| Deployment | Render / Docker (optional) |
+| State Management | React useState/useEffect |
+| Styling | Bootstrap 5 |
+| Version Control | Git & GitHub |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Setup Instructions
+
+### Backend (Django)
+```bash
+# Clone the repository
+git clone <repo-url>
+cd hrms
+
+# Create virtual environment
+python -m venv .venv
+source .venv/bin/activate  # Linux/Mac
+# .venv\Scripts\activate    # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Setup database (PostgreSQL)
+# Configure DATABASE_URL in .env file
+
+# Apply migrations
+python manage.py migrate
+
+# Run development server
+python manage.py runserver
+
+```
+### Frontend (React)
+- cd frontend
+- npm install
+- npm run dev
+
+
+
+

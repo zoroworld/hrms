@@ -62,12 +62,34 @@ python manage.py runserver
 - npm install
 - npm run dev
 
-# Class diagram
+# Class Diagram - Employee & Attendance
 
-- Employee
-  - name
-  - 
-- Attendence
+## Overview
+
+One-to-Many relationship:  
+**1 Employee** can have **many Attendance** records.
+
+```mermaid
+classDiagram
+    direction TB
+
+    class Employee {
+        +int id <<PK>>
+        +string firstName
+        +string lastName
+        +string email
+        +string department
+        +date created_at
+        +date updated_at
+    }
+
+    class Attendance {
+        +int id <<PK>>
+        +int employeeId <<FK>>
+        +date date
+        +string status
+    }
+
 
 # API ENDPOINT
 

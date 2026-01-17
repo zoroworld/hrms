@@ -36,8 +36,8 @@ It allows organizations to manage **employees, departments, and attendance** eff
 ### Backend (Django)
 ```bash
 # Clone the repository
-git clone <repo-url>
-cd hrms
+git clone https://github.com/zoroworld/hrms.git
+cd backend
 
 # Create virtual environment
 python -m venv .venv

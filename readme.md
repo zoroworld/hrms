@@ -84,13 +84,12 @@ python manage.py runserver
 
 ## Attendance API Endpoints
 
-| Method | Endpoint                                   | Description
-|-----------------------------------------------------------------------------------------------------
-| GET    | `/api/v1/attendance`                       |Get all attendance records                         |
-| POST   | `/api/v1/attendance`                       |Create attendance                                  |
-| GET    | `/api/v1/attendance/employee/{employee_id}`| Get all attendance records of a specific employee |
+## Attendance API Endpoints
 
-
-
+| Method | Endpoint                                          | Description                                      |
+|--------|---------------------------------------------------|--------------------------------------------------|
+| GET    | `/api/v1/attendance`                              | Get all attendance records                       |
+| POST   | `/api/v1/attendance`                              | Create attendance record for an employee         |
+| GET    | `/api/v1/attendance/employee/{employee_id}`       | Get all attendance records of a specific employee |
 
 

@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1', 'http://localhost:5173']
+ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1', 'http://localhost:5173', 'https://hrms-jwaleq44m-zoroworlds-projects.vercel.app/']
 
 # Application definition
 
@@ -133,6 +133,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
-    "http://localhost:5173"
+    "http://localhost:5173",
+    "https://hrms-jwaleq44m-zoroworlds-projects.vercel.app/"
 ]
 CORS_ALLOW_CREDENTIALS = True

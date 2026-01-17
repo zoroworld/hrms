@@ -71,7 +71,6 @@ One-to-Many relationship:
 
 
     classDiagram
-        direction TB
 
         class Employee {
             +int id <<PK>>

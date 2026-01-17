@@ -62,6 +62,35 @@ python manage.py runserver
 - npm install
 - npm run dev
 
+# Class diagram
+
+- Employee
+  - name
+  - 
+- Attendence
+
+# API ENDPOINT
+
+
+## Employee API Endpoints
+
+| Method | Endpoint                  | Description                     |
+|--------|---------------------------|---------------------------------|
+| GET    | `/api/v1/employee`        | Get list of all employees       |
+| POST   | `/api/v1/employee`        | Create a new employee           |
+| GET    | `/api/v1/employee/{id}`   | Get employee details by ID      |
+| PUT    | `/api/v1/employee/{id}`   | Update employee details         |
+| DELETE | `/api/v1/employee/{id}`   | Delete an employee              |
+
+## Attendance API Endpoints
+
+| Method | Endpoint                                   | Description
+|-----------------------------------------------------------------------------------------------------
+| GET    | `/api/v1/attendance`                       |Get all attendance records                         |
+| POST   | `/api/v1/attendance`                       |Create attendance                                  |
+| GET    | `/api/v1/attendance/employee/{employee_id}`| Get all attendance records of a specific employee |
+
+
 
 
 

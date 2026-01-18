@@ -112,5 +112,5 @@ One-to-Many relationship:
 | POST   | `/api/v1/attendance`                              | Create attendance record for an employee         |
 | GET    | `/api/v1/attendance/employee/{employee_id}`       | Get all attendance records of a specific employee |
 
-# Notes (Problem)
-- Site take time to load because of render so wait for 5-8 s
+# Notes (Problem on render deploy)
+- The site may take 5–8 seconds to load initially due to Render’s cold-start behavior. Please wait for a few seconds after opening the site.

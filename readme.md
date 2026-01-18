@@ -105,7 +105,6 @@ One-to-Many relationship:
 
 ## Attendance API Endpoints
 
-## Attendance API Endpoints
 
 | Method | Endpoint                                          | Description                                      |
 |--------|---------------------------------------------------|--------------------------------------------------|
@@ -113,4 +112,5 @@ One-to-Many relationship:
 | POST   | `/api/v1/attendance`                              | Create attendance record for an employee         |
 | GET    | `/api/v1/attendance/employee/{employee_id}`       | Get all attendance records of a specific employee |
 
-
+# Notes (Problem)
+- Site take time to load because of render so wait for 5-8 s

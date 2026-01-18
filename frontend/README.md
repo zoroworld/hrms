@@ -63,5 +63,6 @@ python manage.py runserver
 - npm run dev
 
 
-
+# Notes (Problem)
+- Site take time to load because of render so wait for 5-8 s
 

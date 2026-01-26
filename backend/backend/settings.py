@@ -82,11 +82,19 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+tmpPostgres = dj_database_url.parse(os.getenv("DATABASE_URL"))
+
+
 DATABASES = {
-    'default': dj_database_url.parse(
-        os.getenv("DATABASE_URL"),
-        conn_max_age=600,
-        ssl_require=True
+    # 'default': dj_database_url.parse(
+    #     os.getenv("DATABASE_URL"),
+    #     conn_max_age=600,
+    #     ssl_require=True
+    # ),
+    'default': dj_database_url.config(
+        default=os.getenv("DATABASE_URL"),
+        conn_max_age=600,  # keeps connections alive for performance
+        ssl_require=True  # enable SSL if Neon requires it
     ),
     'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -136,7 +144,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5173",
     "http://localhost:5173",
-    "https://hrms-umber-nine.vercel.app/",
+    "https://hrms-umber-nine.vercel.app",
 ]
 CORS_ALLOW_CREDENTIALS = True
 

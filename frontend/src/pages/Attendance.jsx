@@ -137,7 +137,7 @@ const Attendance = () => {
 
       {/* CREATE ATTENDANCE */}
       <h4>Set Attendance</h4>
-      <div className="card p-3 mb-4">
+      <div className="bg-white p-4 rounded shadow mb-4  gap-3">
         <div className="row g-2">
           <div className="col-md-4">
             <select

@@ -4,6 +4,7 @@ import Attendance from "./pages/Attendance";
 import EmployeeAttendance from "./pages/EmployeeAttendance";
 import Index from "./pages/Index";
 import DashboardLayout from "./pages/layout/DashboardLayout";
+import EditEmployee from "./pages/EditEmployee";
 
 function App() {
   return (
@@ -15,6 +16,10 @@ function App() {
       <Route path="/dashboard" element={<DashboardLayout />}>
         <Route index element={<Employees />} />
         <Route path="employees" element={<Employees />} />
+        <Route
+          path="/dashboard/employees/:id"
+          element={<EditEmployee />}
+        />
         <Route path="attendance" element={<Attendance />} />
         <Route
           path="attendance/employee/:id"

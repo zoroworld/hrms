@@ -1,8 +1,10 @@
 import { useState } from "react";
 import api from "../api/api";
 import DataTable from "./DataTable";
+import { useNavigate } from "react-router-dom";
 
 const EmployeeTable = ({ employees, refresh, onAlert }) => {
+  const navigate = useNavigate();
   const [deletingId, setDeletingId] = useState(null);
 
   const deleteEmployee = async (id) => {
@@ -45,9 +47,12 @@ const EmployeeTable = ({ employees, refresh, onAlert }) => {
           <td>{emp.email}</td>
           <td>{emp.department}</td>
           <td>
-            {/* <button className="btn btn-sm btn-primary me-2" disabled>
+            <button
+              className="btn btn-sm btn-primary me-2"
+              onClick={() => navigate(`/dashboard/employees/${emp.id}`)}
+            >
               Edit
-            </button> */}
+            </button>
 
             <button
               className="btn btn-sm btn-danger"

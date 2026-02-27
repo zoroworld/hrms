@@ -141,7 +141,7 @@ const Attendance = () => {
         <div className="row g-2">
           <div className="col-md-4">
             <select
-              className="form-select"
+              className="form-select p-3"
               value={employeeId}
               onChange={(e) => setEmployeeId(e.target.value)}
             >
@@ -157,7 +157,7 @@ const Attendance = () => {
           <div className="col-md-3">
             <input
               type="date"
-              className="form-control"
+              className="form-control p-3"
               value={date}
               max={new Date().toISOString().split("T")[0]}
               onChange={(e) => setDate(e.target.value)}
@@ -166,7 +166,7 @@ const Attendance = () => {
 
           <div className="col-md-3">
             <select
-              className="form-select"
+              className="form-select p-3"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
             >
@@ -177,7 +177,7 @@ const Attendance = () => {
 
           <div className="col-md-2">
             <button
-              className="btn btn-primary w-100"
+              className="btn btn-primary w-100 p-3"
               onClick={createAttendance}
               disabled={actionLoading}
             >

@@ -10,10 +10,10 @@ const Index = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        background: "#f5f7fa",
+        background: "#333",
       }}
     >
-      <div className="text-center bg-dark p-5 rounded shadow">
+      <div className="text-center bg-white p-5 rounded shadow">
         <h2 className="mt-3">Welcome to Hrms Attendance</h2>
         <button
           className="btn btn-primary mt-3"

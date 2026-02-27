@@ -1,6 +1,6 @@
 const Navbar = () => (
   <nav className="navbar navbar-dark bg-dark shadow-sm px-4">
-    <span className="navbar-brand">Dashboard</span>
+    <span className="navbar-brand"></span>
 
     <div className="dropdown">
       <button

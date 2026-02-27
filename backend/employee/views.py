@@ -4,6 +4,7 @@ from rest_framework.exceptions import ValidationError
 from .models import Employee
 from .serializers import EmployeeSerializer
 
+
 # List all employees & create new employee
 class EmployeeListCreateAPI(generics.ListCreateAPIView):
     queryset = Employee.objects.all()
@@ -26,6 +27,16 @@ class EmployeeListCreateAPI(generics.ListCreateAPIView):
             "message": "Employee created successfully",
             "data": serializer.data
         }, status=status.HTTP_201_CREATED)
+
+
+class EmployeeAllListAPI(generics.ListAPIView):
+    """
+    GET /employee/all/
+    Returns ALL employees (no pagination)
+    """
+    queryset = Employee.objects.all().order_by("id")
+    serializer_class = EmployeeSerializer
+    pagination_class = None
 
 
 # Retrieve, update, or delete a specific employee

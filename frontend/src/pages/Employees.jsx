@@ -74,7 +74,7 @@ const Employees = () => {
       setDepartment("");
 
       fetchEmployees(page);
-    } catch (error) {
+    } catch (err) {
       setAlert({
         type: "danger",
         message: "Failed to fetch employees or take time for 10s due to render cold start.",

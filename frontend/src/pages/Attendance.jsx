@@ -6,6 +6,7 @@ import Loader from "../components/Loader";
 import AlertMessage from "../components/AlertMessage";
 import ErrorState from "../components/ErrorState";
 import EmptyState from "../components/EmptyState";
+import AttendanceTable from "../components/AttendanceTable";
 
 const Attendance = () => {
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ const Attendance = () => {
   /* ================= FETCH ATTENDANCE ================= */
   const fetchAttendance = async (pageNo = 1) => {
     try {
-      setFetchLoading(true); 
+      setFetchLoading(true);
       setError("");
 
       const res = await api.get(`attendance?page=${pageNo}&size=10`);
@@ -67,6 +68,7 @@ const Attendance = () => {
   }, [page]);
 
   /* ================= CREATE ATTENDANCE ================= */
+
   const createAttendance = async () => {
     if (!employeeId || !date) {
       setAlert({ type: "warning", message: "All fields are required" });
@@ -74,7 +76,7 @@ const Attendance = () => {
     }
 
     try {
-      
+
       setActionLoading(true);
       await api.post("attendance/", { employee: employeeId, date, status });
 
@@ -134,6 +136,7 @@ const Attendance = () => {
       />
 
       {/* CREATE ATTENDANCE */}
+      <h3>Set Attendance</h3>
       <div className="card p-3 mb-4">
         <div className="row g-2">
           <div className="col-md-4">
@@ -184,77 +187,19 @@ const Attendance = () => {
         </div>
       </div>
 
-      {/* FETCH STATES */}
-      {fetchLoading && <Loader />}
+      <h3>Show Attendance</h3>
 
-      {!fetchLoading && error && (
-        <ErrorState message={error} onRetry={() => fetchAttendance(page)} />
-      )}
-
-      {hasFetched && !fetchLoading && !error && attendance.length === 0 && (
-        <EmptyState message="No attendance records found" />
-      )}
-
-      {/* TABLE */}
-      {!fetchLoading && !error && attendance.length > 0 && (
-        <>
-          <table className="table table-bordered">
-            <thead className="table-dark">
-              <tr>
-                <th>#</th>
-                <th>Employee</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {attendance.map((a, index) => (
-                <tr key={a.id}>
-                  <td>{(page - 1) * 10 + index + 1}</td>
-                  <td>
-                    {a.employee_detail?.first_name}{" "}
-                    {a.employee_detail?.last_name}
-                  </td>
-                  <td>{a.date}</td>
-                  <td>
-                    <span
-                      className={`badge ${a.status === "Present"
-                          ? "bg-success"
-                          : "bg-danger"
-                        }`}
-                    >
-                      {a.status}
-                    </span>
-                  </td>
-                  <td>
-                    <button
-                      className="btn btn-sm btn-danger me-2"
-                      onClick={() => deleteAttendance(a.id)}
-                      disabled={actionLoading}
-                    >
-                      Delete
-                    </button>
-                    <button
-                      className="btn btn-sm btn-primary"
-                      onClick={() => navigate(`employee/${a.employee}`)}
-                    >
-                      View
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-
-          <Pagination
-            page={page}
-            totalPages={totalPages}
-            onPageChange={setPage}
-          />
-        </>
-      )}
+      <AttendanceTable
+        attendance={attendance}
+        fetchLoading={fetchLoading}
+        error={error}
+        hasFetched={hasFetched}
+        page={page}
+        totalPages={totalPages}
+        onRetry={(p = page) => fetchAttendance(p)}
+        onDelete={deleteAttendance}
+        onView={(id) => navigate(`employee/${id}`)}
+      />
     </div>
   );
 };

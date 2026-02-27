@@ -136,7 +136,7 @@ const Attendance = () => {
       />
 
       {/* CREATE ATTENDANCE */}
-      <h3>Set Attendance</h3>
+      <h4>Set Attendance</h4>
       <div className="card p-3 mb-4">
         <div className="row g-2">
           <div className="col-md-4">
@@ -187,7 +187,7 @@ const Attendance = () => {
         </div>
       </div>
 
-      <h3>Show Attendance</h3>
+      <h4>Show Attendance</h4>
 
       <AttendanceTable
         attendance={attendance}

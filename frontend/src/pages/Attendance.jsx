@@ -125,7 +125,7 @@ const Attendance = () => {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container-fluid mt-4">
       <h3 className="mb-3">Attendance Management</h3>
 
       {/* ALERT */}

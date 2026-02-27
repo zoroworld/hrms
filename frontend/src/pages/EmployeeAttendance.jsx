@@ -42,7 +42,7 @@ const EmployeeAttendance = () => {
     str.charAt(0).toUpperCase() + str.slice(1);
 
   return (
-    <div className="container mt-4">
+    <div className="container-fluid mt-4">
       <h3>
         Attendance Records for{" "}
         {employee && (

@@ -12,11 +12,11 @@ const Sidebar = () => {
       <ul className="nav flex-column">
 
         {/* Dashboard */}
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link className="nav-link text-white" to="/">
             Dashboard
           </Link>
-        </li>
+        </li> */}
 
         {/* Employees */}
         <li className="nav-item">
